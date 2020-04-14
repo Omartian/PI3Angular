@@ -1,8 +1,8 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
-import { Product } from 'src/app/productos/Product';
-import { ProductsService } from 'src/app/productos/products.service';
 import { Router, NavigationEnd } from '@angular/router';
 import { EventEmitter } from '@angular/core';
+import { Product } from '../../../Product';
+import { ProductsService } from '../../../products.service';
 
 @Component({
   selector: 'app-product',
