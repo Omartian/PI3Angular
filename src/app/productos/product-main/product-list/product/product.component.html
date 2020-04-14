@@ -1,7 +1,7 @@
 
 <li class="border list-unstyled" style="background-color: #f5d376; border-radius: 25px; padding-top: 15px; padding-bottom: 10px;">
 <div class="row" style="padding-right: 20px;">
-    <div class="col-1" style="padding-left: 15px;" [hidden]="url != '/products'">
+    <div class="col-1" style="padding-left: 15px;" [hidden]="!url.includes('productos')">
     <input type="checkbox" (click)="addToMonitored(producto.uid)">
     </div>
 
