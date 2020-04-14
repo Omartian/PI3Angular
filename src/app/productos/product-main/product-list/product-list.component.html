@@ -1,0 +1,36 @@
+
+     <div class="row">
+        <div class="col-4">
+            <input type="text" 
+             class="form-control" name="busqueda" id="" aria-describedby="helpId" placeholder="Escriba para buscar" [(ngModel)]="busqueda" (keydown.enter)="search()">
+        </div> 
+            
+        <div>
+            <a name="" id="" class="btn btn-outline-primary" (click)="search()" role="button" >Buscar producto</a>
+        </div>
+        <div  class="ml-2">
+            <a class="btn btn-outline-primary"  role="button" (click)="addSelected()">Añadir seleccionados a monitoreados</a>
+        </div>
+    </div>
+    <p [hidden]="!(busqueda.length >= 1)" class="text-muted"><strong>Buscando: </strong>{{busqueda}}</p>
+
+    <div class=" mt-2" *ngIf="url.includes('productos')">
+        <ul *ngFor="let item of filtrados, let i = index" >
+            <app-product [id]=i [producto]=item (addSelected)="addToMonitored($event)"></app-product>
+        </ul>
+
+        <div class="alert alert-danger" role="alert" *ngIf="filtrados.length === 0" >
+            <strong>Ningún producto concuerda con la búsqueda</strong>
+        </div>
+    </div>
+
+    <div class=" mt-2" *ngIf="url.includes('monitoreo')">
+        <ul *ngFor="let item of prodFiltr, let i = index" >
+            <app-product [id]=i [producto]=item></app-product>
+        </ul>
+
+        <div class="alert alert-danger" role="alert" *ngIf="prodFiltr.length === 0" >
+            <strong>Ningún producto concuerda con la búsqueda</strong>
+        </div>
+    </div>
+    

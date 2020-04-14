@@ -1,0 +1,35 @@
+<div class="container" style="background-color: #f5d376; box-shadow: 5px 5px 0 0 gray;">
+    <div class="row" >
+        <div class="col-md-12" >
+            <div style="padding: 40px 15px; text-align: center;">
+                <h1> {{producto.nombre}} </h1>
+                <div style="text-align: left; margin-left: 15%;" class="media col">
+                    <img style="border-radius: 20px;"  src="https://i.picsum.photos/id/{{producto.uid}}/300/300.jpg" alt="" srcset="">
+                    <div style="padding: 40px 15px;" class="media-body">
+                        <h3>Precio (MXN): ${{producto.precio}}</h3>
+                        <br>
+                        <h3>Marca:  {{producto.marca}}</h3>
+                        <br>
+                        <h3>Descripción:  {{producto.descripcion}}</h3>
+                        <br>
+                        <h3>Existencia: {{producto.existencia}}</h3>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-left: 35%; margin-right: 35%; width: 35%;">
+                    <table class="rwd-table">
+                            <tr>
+                                <th>Atributo</th>
+                                <th>Valor</th>
+                                <th>Unidad</th>
+                            </tr>
+                            <tr *ngFor="let specs of producto.especificacion">
+                              <td data-th>{{specs.atributo}}</td>
+                              <td data-th>{{specs.valor}}</td>
+                              <td data-th>{{specs.unidad}}</td>
+                            </tr>
+                      </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

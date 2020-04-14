@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "PI3Angular"
+    }
+  },
+  "defaultProject": "PI3Angular",
+  "cli": {
+    "analytics": "8d4cfd57-21bf-4ac4-8026-7dc2eb6e4d06"
+  }
 }
